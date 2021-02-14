@@ -1,0 +1,22 @@
+blueprint:
+  name: Get Variable
+  description: Get a HomeVision Variable value for a slider
+  domain: automation
+  input: 
+    slider_name:
+      name: Slider Name
+      selector:
+        entity:
+          domain: input_number
+    topic:
+      name: State Topic
+      description: Use stat/{topic}/RESULT 
+trigger:
+  platform: mqtt
+  topic: !input topic
+action:
+  service: input_number.set_value
+  data:
+    entity_id: !input slider_name
+    value: "{{ trigger.payload_json.STATE }}"
+
