@@ -415,7 +415,7 @@ trigger_variables:
     }}'
   weather_provider: !input 'weather_provider'
   temperature_sensor: !input 'temperature_sensor'
-  entityid: '{%- if temperature_sensor|lower == \"none\" -%}\n  {{- weather_provider -}}\n{%- else -%}\n  {{- temperature_sensor -}}'
+  entityid: '{%- if temperature_sensor|lower == "none" -%}  {{- weather_provider -}} {%- else -%}  {{- temperature_sensor -}} {% endif %}'
 trigger:
 - platform: state
   entity_id: '{{entityid}}'
