@@ -153,6 +153,12 @@ blueprint:
           max: 65535.0
           mode: slider
           step: 1.0
+    temperature_empty_icon:
+      name: Temperature empty icon
+      description: Icon for an empty thermometer
+      default: 
+      selector:
+        text: {}
     thermometer_quarter_threshold:
       name: Thermometer one quarter threshold
       description: Temperatures above this threshold will show a one-quarter full
@@ -175,6 +181,12 @@ blueprint:
           max: 65535.0
           mode: slider
           step: 1.0
+    temperature_quarter_icon:
+      name: Temperature one quarter icon
+      description: Icon for a one-quarter thermometer
+      default: 
+      selector:
+        text: {}
     thermometer_half_threshold:
       name: Thermometer half threshold
       description: Temperatures above this threshold will show a half full thermometer.  This
@@ -197,6 +209,12 @@ blueprint:
           max: 65535.0
           mode: slider
           step: 1.0
+    temperature_half_icon:
+      name: Temperature half icon
+      description: Icon for a half thermometer
+      default: 
+      selector:
+        text: {}
     thermometer_three_quarter_threshold:
       name: Thermometer three quarter threshold
       description: Temperatures above this threshold will show a three-quarters full
@@ -219,6 +237,12 @@ blueprint:
           max: 65535.0
           mode: slider
           step: 1.0
+    temperature_three_quarter_icon:
+      name: Temperature three quarter icon
+      description: Icon for a three quarter thermometer
+      default: 
+      selector:
+        text: {}
     thermometer_full_threshold:
       name: Thermometer full threshold
       description: Temperatures above this threshold will show a full thermometer.  This
@@ -241,6 +265,12 @@ blueprint:
           max: 65535.0
           mode: slider
           step: 1.0
+    temperature_full_icon:
+      name: Temperature full icon
+      description: Icon for a full thermometer
+      default: 
+      selector:
+        text: {}
     colortemp:
       name: Colorize temperature text
       description: Also apply icon colors to text
@@ -253,7 +283,7 @@ blueprint:
       default: true
       selector:
         boolean: {}
-  source_url: https://github.com/HASwitchPlate/HASPone/blob/main/Home_Assistant/blueprints/hasp_Display_Temperature_with_Icon_and_Colors.yaml
+  source_url: https://github.com/rebel7580/Home-Assistant/blob/master/hasp_Display_State_with_Icon_and_Colors.yaml
 mode: parallel
 max_exceeded: silent
 variables:
@@ -271,14 +301,19 @@ variables:
   temperature_attribute: !input 'temperature_attribute'
   suffix_select: !input 'suffix_select'
   thermometer_empty_color: !input 'thermometer_empty_color'
+  temperature_empty_icon: !input 'temperature_empty_icon'
   thermometer_quarter_threshold: !input 'thermometer_quarter_threshold'
   thermometer_quarter_color: !input 'thermometer_quarter_color'
+  temperature_quarter_icon: !input 'temperature_quarter_icon'
   thermometer_half_threshold: !input 'thermometer_half_threshold'
   thermometer_half_color: !input 'thermometer_half_color'
+  temperature_half_icon: !input 'temperature_half_icon'
   thermometer_three_quarter_threshold: !input 'thermometer_three_quarter_threshold'
   thermometer_three_quarter_color: !input 'thermometer_three_quarter_color'
+  temperature_three_quarter_icon: !input 'temperature_three_quarter_icon'
   thermometer_full_threshold: !input 'thermometer_full_threshold'
   thermometer_full_color: !input 'thermometer_full_color'
+  temperature_full_icon: !input 'temperature_full_icon'
   colortemp: !input 'colortemp'
   roundtemp: !input 'roundtemp'
   haspobject: '{{ "p[" ~ hasppage ~ "].b[" ~ haspbutton ~ "]" }}'
