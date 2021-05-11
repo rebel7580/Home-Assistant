@@ -301,7 +301,7 @@ variables:
   font: 10
   ypos: "{{(haspbutton|int - 4) * 67 + 2}}"
   xpos: 0
-  iconwidth: 40
+  iconwidth: 60
   iconheight: 65
   iconfont: 8
   xcen: 2
