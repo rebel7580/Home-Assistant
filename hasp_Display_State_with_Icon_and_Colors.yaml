@@ -82,7 +82,7 @@ blueprint:
     temperature_sensor:
       name: "Temperature sensor"
       description: "Select a temperature sensor.  If selected, this state of this sensor will be displayed instead of the weather provider selected above."
-      default:
+      default: "None"
       selector:
         entity:
           domain: sensor
