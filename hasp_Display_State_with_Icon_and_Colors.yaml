@@ -421,7 +421,7 @@ trigger_variables:
     {%- endif -%}
 trigger:
   - platform: state
-    entity_id: {{entityid}}
+    entity_id: "{{entityid}}"
   - platform: template
     value_template: "{{ is_state(haspsensor, 'ON') }}"
   - platform: homeassistant
