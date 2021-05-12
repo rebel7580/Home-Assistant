@@ -418,10 +418,10 @@ trigger_variables:
       {{- weather_provider -}}
     {%- else -%}
       {{- temperature_sensor -}}
-    {% endif %}
+    {%- endif -%}
 trigger:
   - platform: state
-    entity_id: !input weather_provider
+    entity_id: {{entityid}}
   - platform: template
     value_template: "{{ is_state(haspsensor, 'ON') }}"
   - platform: homeassistant
