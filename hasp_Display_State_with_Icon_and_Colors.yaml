@@ -75,7 +75,7 @@ blueprint:
     weather_provider:
       name: "Weather provider"
       description: "Select the weather provider to obtain the current outdoor temperature.  If a temperature sensor is selected below, that will override this selection."
-      default:
+      default: "weather.home"
       selector:
         entity:
           domain: weather
